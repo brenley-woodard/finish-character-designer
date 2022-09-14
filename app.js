@@ -52,10 +52,12 @@ function displayPhrases() {
 }
 
 addButton.addEventListener('click', () => {
-    const phrase = phraseInput.value;
-    character.phrases.push(phrase);
-    displayPhrases();
-    phraseInput.value = '';
+    if (phraseInput.value !== '') {
+        const phrase = phraseInput.value;
+        character.phrases.push(phrase);
+        displayPhrases();
+        phraseInput.value = '';
+    }
 });
 
 displayCharacter();
